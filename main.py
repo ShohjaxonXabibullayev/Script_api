@@ -2,9 +2,8 @@ import requests
 
 
 def main():
-    # 1) O'zgartiring: xohlagan xabar va webhook.site dan olingan URL
     msg = "Salom, bu mening xabarim"
-    webhook_url = "https://webhook.site/0dd410b9-b987-44e8-9d96-3b7eaa0187b2"  # webhook.site dan olingan manzilingizni shu yerga yozing
+    webhook_url = "https://webhook.site/0dd410b9-b987-44e8-9d96-3b7eaa0187b2"
 
     post_payload = {"msg": msg, "url": webhook_url}
 
@@ -22,17 +21,14 @@ def main():
         "\nEndi webhook (webhook.site yoki shunga o'xshash) sahifasiga o'tib, API tomonidan yuborilgan 2-qism kodni oling.")
     print("Masalan: https://webhook.site/ sahifasiga kiring va so'rovni tekshiring.")
 
-    # 2) Ikkinchi qismni qo'lda kiriting (webhook.site dan ko'chirib oling)
     second_code = input("\nWebhook'dan olingan 2-qism kodni kiriting: ").strip()
     if not second_code:
         print("2-qism kod kiritilmadi. Dastur tugadi.")
         return
 
-    # 3) Birlashtirish
     full_code = first_code + second_code
     print("\nBirlashtirilgan kod:", full_code)
 
-    # 4) GET so'rov yuborish
     get_url = f"https://test.icorp.uz/interview.php?code={full_code}"
     print("GET so'rov yuborilyapti...")
     try:
